@@ -1,0 +1,35 @@
+#!/bin/sh
+# postinst script for graylog2-web
+#
+# Author: Claudio Filho <claudio.filho@locaweb.com.br>
+
+set -e
+
+APP_PATH="/var/www/graylog2-web"
+
+case "$1" in
+    configure|reconfigure)
+        addgroup --quiet --system graylog2
+	adduser --quiet --system --no-create-home --disabled-password --gid $(getent group graylog2 | cut -d: -f3) --home ${APP_PATH} graylog2
+	chown -R graylog2:graylog2 ${APP_PATH}
+	chmod 755 ${APP_PATH}/vendor/bundle/ruby/1.9.1/bin/*
+	chmod 755 ${APP_PATH}/vendor/bundle/ruby/1.9.1/gems/${GEM}*/bin/*
+    ;;
+
+    abort-upgrade)
+    exit 0
+    ;;
+
+    abort-remove|abort-deconfigure)
+    exit 0
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

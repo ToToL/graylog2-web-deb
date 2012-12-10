@@ -1,0 +1,59 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Author: Claudio Filho <claudio.filho@locaweb.com.br>
+
+#export DH_VERBOSE=1
+
+include /usr/share/dpatch/dpatch.make
+
+default: binary
+
+build: build-stamp
+
+build-stamp: patch-stamp
+	dh_clean
+	dh_testdir
+	rm -rf log tmp
+	mkdir -p log tmp
+	bundle install --deployment --without test development
+	touch build-stamp
+
+clean: unpatch
+	dh_testdir
+	dh_testroot 
+	rm -rf .bundle
+	rm -rf log tmp
+	rm -rf vendor/gems
+	rm -rf vendor/bundle
+	rm -f patch-stamp build-stamp install-stamp
+	dh_clean
+
+install: build build-stamp
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	dh_installchangelogs
+	dh_install
+	dh_installinit
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

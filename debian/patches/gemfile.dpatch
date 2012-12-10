@@ -1,0 +1,19 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## gemfile.dpatch by Claudio Filho <claudio.filho@locaweb.com.br>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad graylog2-web-interface-0.9.6p1.orig/Gemfile graylog2-web-interface-0.9.6p1/Gemfile
+--- graylog2-web-interface-0.9.6p1.orig/Gemfile	2012-06-25 12:23:15.000000000 -0300
++++ graylog2-web-interface-0.9.6p1/Gemfile	2012-11-26 02:54:04.000000000 -0200
+@@ -17,6 +17,8 @@
+ gem 'SystemTimer', '~> 1.2.3', :require => 'system_timer', :platforms => :ruby_18
+ gem 'rails_autolink', '~> 1.0.4'
+ gem 'kaminari', '~> 0.12.4'
++gem 'thin', '1.5.0'
++gem 'god', '0.13.1'
+ 
+ group :development, :test do
+   # might be useful to generate fake data in development

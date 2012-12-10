@@ -1,0 +1,17 @@
+app var/www/graylog2-web/
+config var/www/graylog2-web/
+lib var/www/graylog2-web/
+public var/www/graylog2-web/
+.bundle var/www/graylog2-web/
+log var/www/graylog2-web/
+tmp var/www/graylog2-web/
+script var/www/graylog2-web/
+vendor var/www/graylog2-web/
+build_date var/www/graylog2-web/
+config.ru var/www/graylog2-web/
+Gemfile var/www/graylog2-web/
+Gemfile.lock var/www/graylog2-web/
+Rakefile var/www/graylog2-web/
+README var/www/graylog2-web/
+debian/god var/www/graylog2-web/
+debian/examples usr/share/graylog2-web/

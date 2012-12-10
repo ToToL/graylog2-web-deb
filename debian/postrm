@@ -1,0 +1,32 @@
+#!/bin/sh
+# postrm script for graylog2-web-interface
+#
+# Author: Claudio Filho <claudio.filho@locaweb.com.br>
+
+set -e
+
+case "$1" in
+    remove)
+    ;;
+
+    purge)
+	rm -rf /var/www/graylog2-web
+        userdel graylog2 > /dev/null 2>&1 || true
+        groupdel graylog2 > /dev/null 2>&1 || true
+    ;;
+
+    upgrade)
+    ;;
+
+    failed-upgrade|abort-install|abort-upgrade|disappear)
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

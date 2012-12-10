@@ -1,0 +1,51 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## gemfile_lock.dpatch by Claudio Filho <claudio.filho@locaweb.com.br>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad graylog2-web-interface-0.9.6p1.orig/Gemfile.lock graylog2-web-interface-0.9.6p1/Gemfile.lock
+--- graylog2-web-interface-0.9.6p1.orig/Gemfile.lock	2012-06-25 12:23:15.000000000 -0300
++++ graylog2-web-interface-0.9.6p1/Gemfile.lock	2012-11-26 04:26:51.000000000 -0200
+@@ -38,11 +38,14 @@
+     ci_reporter (1.6.5)
+       builder (>= 2.1.2)
+     daemon_controller (0.2.6)
++    daemons (1.1.9)
+     database_cleaner (0.6.7)
+     erubis (2.7.0)
++    eventmachine (1.0.0)
+     faker (0.9.5)
+       i18n (~> 0.4)
+     fastthread (1.0.7)
++    god (0.13.1)
+     graylog2-declarative_authorization (0.5.2)
+     hike (1.2.1)
+     home_run (1.0.4)
+@@ -119,6 +122,10 @@
+       hike (~> 1.2)
+       rack (~> 1.0)
+       tilt (~> 1.1, != 1.3.0)
++    thin (1.5.0)
++      daemons (>= 1.0.9)
++      eventmachine (>= 0.12.6)
++      rack (>= 1.0.0)
+     thor (0.14.6)
+     tilt (1.3.3)
+     timecop (0.3.5)
+@@ -143,6 +150,7 @@
+   ci_reporter (~> 1.6.4)
+   database_cleaner (~> 0.6.0)
+   faker (~> 0.9.5)
++  god (0.13.1)
+   graylog2-declarative_authorization (~> 0.5.2)
+   home_run (~> 1.0.2)
+   hoptoad_notifier (~> 2.4.9)
+@@ -160,5 +168,6 @@
+   rpm_contrib (~> 2.1.1)
+   shoulda (~> 2.11.3)
+   shoulda-activemodel (= 0.0.2)
++  thin (1.5.0)
+   timecop (~> 0.3.5)
+   tire (~> 0.3.12)
