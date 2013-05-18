@@ -15,3 +15,4 @@ Rakefile var/www/graylog2-web/
 README var/www/graylog2-web/
 debian/god var/www/graylog2-web/
 debian/examples usr/share/graylog2-web/
+debian/unicorn.rb var/www/graylog2-web/config/

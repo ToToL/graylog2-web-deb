@@ -1,3 +1,23 @@
+graylog2-web (0.11.0-3) stable; urgency=low
+
+  * Updated the gems: json, bson and bson_ext.
+  * Added the gem: mongo.
+
+ -- Claudio Filho <claudio.filho@locaweb.com.br>  Mon, 15 May 2013 12:02:41 -0300
+
+graylog2-web (0.11.0-2) stable; urgency=low
+
+  * Fixing init.d-graylog2-web and nginx-vhost.
+  * Added config/unicorn.rb.
+
+ -- Claudio Filho <claudio.filho@locaweb.com.br>  Mon, 13 May 2013 17:25:14 -0300
+
+graylog2-web (0.11.0-1) stable; urgency=low
+
+  * New Upstream Release.
+
+ -- Claudio Filho <claudio.filho@locaweb.com.br>  Mon, 13 May 2013 12:47:03 -0300
+
 graylog2-web (0.9.6p1-5) stable; urgency=low
 
   * Fixed postinst.

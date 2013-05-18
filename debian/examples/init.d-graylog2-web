@@ -38,7 +38,7 @@ set -e
 case "$1" in
   start)
     log_daemon_msg "Starting $DESC: "
-    if start-stop-daemon -S -q -o --user $USER -c $USER --chdir $DIR --startas $GOD -- $GOD_OPTS; then
+    if start-stop-daemon -S -q -o --user $USER -c $USER --chdir $DIR --exec $GOD -- $GOD_OPTS; then
       log_end_msg 0
     else
       log_end_msg 1
@@ -46,7 +46,7 @@ case "$1" in
     ;;
   stop)
     log_daemon_msg "Stopping $DESC: "
-    if start-stop-daemon -K -q -o --user $USER -c $USER --chdir $DIR --pidfile $DIR/tmp/pids/thin.#{port}.pid; then
+    if start-stop-daemon -K -q -o --user $USER -c $USER --chdir $DIR --pidfile $DIR/tmp/pids/unicorn.pid; then
       log_end_msg 0
     else
       log_end_msg 1

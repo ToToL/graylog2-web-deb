@@ -1,5 +1,4 @@
-/var/www/graylog2-web/config/email.yml
 /var/www/graylog2-web/config/general.yml
 /var/www/graylog2-web/config/indexer.yml
+/var/www/graylog2-web/config/ldap.yml
 /var/www/graylog2-web/config/mongoid.yml
-/var/www/graylog2-web/config/newrelic.yml
