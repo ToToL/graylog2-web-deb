@@ -1,4 +1,4 @@
-graylog2-web (0.11.0-3) stable; urgency=low
+graylog2-web (0.11.0-4) stable; urgency=low
 
   * Fixing watch file.
   * Fixing session on control file.
