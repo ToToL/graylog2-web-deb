@@ -3,11 +3,11 @@ Priority: extra
 Maintainer: Claudio Filho <claudio.filho@locaweb.com.br>
 Build-Depends: debhelper (>= 8.0.0), devscripts, dpatch, ruby1.9.1, ruby1.9.1-dev, bundler
 Standards-Version: 3.9.3
-Section: ruby
+Section: admin
 Homepage: http://www.graylog2.org
 
 Package: graylog2-web
-Section: ruby
+Section: admin
 Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.9.1, bundler, debconf
 Suggests: mongodb-server, elasticsearch, rabbitmq-server
