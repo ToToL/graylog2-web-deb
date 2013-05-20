@@ -9,8 +9,12 @@ APP_PATH="/var/www/graylog2-web"
 
 case "$1" in
     configure|reconfigure)
-        addgroup --quiet --system graylog2
-	adduser --quiet --system --no-create-home --disabled-password --gid $(getent group graylog2 | cut -d: -f3) --home ${APP_PATH} graylog2
+        if ! getent group graylog2 2> /dev/null; then
+            addgroup --quiet --system graylog2
+        fi
+        if ! getent passwd graylog2 2> /dev/null; then
+            adduser --quiet --system --no-create-home --disabled-password --gid $(getent group graylog2 | cut -d: -f3) --home ${APP_PATH} graylog2
+        fi
 	chown -R graylog2:graylog2 ${APP_PATH}
 	chmod 755 ${APP_PATH}/vendor/bundle/ruby/1.9.1/bin/*
 	chmod 755 ${APP_PATH}/vendor/bundle/ruby/1.9.1/gems/${GEM}*/bin/*

@@ -1,3 +1,9 @@
+graylog2-web (0.11.0-5) stable; urgency=low
+
+  * Fixing postinst.
+
+ -- Claudio Filho <claudio.filho@locaweb.com.br>  Mon, 20 May 2013 11:41:59 -0300
+
 graylog2-web (0.11.0-4) stable; urgency=low
 
   * Fixing watch file.
